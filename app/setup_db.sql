@@ -14,16 +14,12 @@ CREATE TABLE users(
     -- basic user information
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
-    birthday INTEGER PRIMARY KEY,
+    birthday DATE NOT NULL,
 
     -- contact info
-    phone INTEGER NOT NULL UNIQUE,
+    phone TEXT NOT NULL UNIQUE, -- phone should be text not int to account for other country formats
     email TEXT NOT NULL UNIQUE, -- this MUST be unique because user cannot use one email for multiple accounts
-    adress TEXT NOT NULL, -- this will NOT be unique because multiple users could be at one address
-
-
-
-
+    user_address TEXT NOT NULL -- this will NOT be unique because multiple users could be at one address
 
 
 )
